@@ -6,6 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script type="text/javascript">
+		function goToIndex() {
+			window.location.href = "index.php";
+		}
+	</script>
 </head>
 <body>
   
@@ -14,7 +19,7 @@
 <nav class="navbar">
   <div class="navbar_container">
     <div class="navbar_logo"
-       <a href="/SoccerClub/index.php" id="logo"><img src="images/KCSC_Badge.png" alt="Logo"></a>
+       <a href="/SoccerClub/index.php" id="logo"><img src="images/KCSC_Badge.png" alt="Logo" onclick="goToIndex()"></a>
     </div>
      
     
