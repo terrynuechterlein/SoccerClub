@@ -17,7 +17,7 @@ require_once("connection.php");
 </head>
 <body>
  <?php include("navbar.php");?>
-     <!-- Services Section -->
+     <!-- leadership board -->
      <div class="leadership">
       <h1>Leadership</h1>
       <div class="leadership_container">

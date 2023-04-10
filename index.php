@@ -32,7 +32,7 @@ require_once("connection.php");
     </div>
   </div>
 
-   <!-- honourable mentions section -->
+   <!-- team of the week-->
    <div class="tow">
       <h1>Players of the Week</h1>
       <div class="tow_container">

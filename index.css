@@ -6,7 +6,7 @@
   
 }
  .main {
-    /*background-image: url('images/index3.png');*/
+
     background-image: url('images/index8.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -102,7 +102,7 @@
     width: 100%;
   }
 
-  /* Players of the Week---> honours section */
+  /* team of the Week---> tow*/
   .tow {
     background-image: url('images/index6.png');
     display: flex;
