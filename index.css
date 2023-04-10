@@ -1,0 +1,206 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  
+}
+ .main {
+    /*background-image: url('images/index3.png');*/
+    background-image: url('images/index8.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+
+  }
+  
+  .main_container {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    margin: 0 auto;
+    height: 90vh;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-left: 800px;
+    
+    
+  }
+  
+  .main_content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 100%;
+  }
+  
+  .main_content h1 {
+    text-align: center;
+    font-size: 3rem;
+    background-color: #ff8177;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+
+  .main_content p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .main_btn {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    font-size: 1rem;
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+  }
+  
+  .main_btn a {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .main_btn:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #4837ff;
+    transition: all 0.35s;
+    border-radius: 4px;
+  }
+  
+  .main_btn:hover {
+    color: #fff;
+  }
+  
+  .main_btn:hover:after {
+    width: 100%;
+  }
+
+  /* Players of the Week---> honours section */
+  .tow {
+    background-image: url('images/index6.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .tow h1 {
+    background-color: #ff8177;
+    background-image: linear-gradient(
+      to right,
+      #ff8177 0%,
+      #ff867a 0%,
+      #ff8c7f 21%,
+      #f99185 52%,
+      #cf556c 78%,
+      #b12a5b 100%
+    );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+  }
+
+ .tow_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+
+  .tow_card {
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    border-radius: 4px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17, 17, 17, 0.6) 100%
+      ),
+      url('images/CanteTOW.jpg');
+    background-size: cover;
+    position: relative;
+  }
+
+.tow_card:before {
+  opacity: 0.2;
+}
+
+.tow_card:nth-child(2) {
+  background-image:linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(17, 17, 17, 0.6) 100%
+  ),url('images/TOW.jpg');
+}
+
+.tow_card h2 {
+  position: absolute;
+  top: 350px;
+  left: 30px;
+  color:#fff;
+}
+
+.tow_card p {
+  position: absolute;
+  top: 400px;
+  left: 30px;
+  color:#fff
+}
+
+.tow_card button {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #f77062;
+  position: absolute;
+  top: 440px;
+  left: 30px;
+  font-size: 1rem;
+}
+
+.tow_card button:hover {
+  cursor: pointer;
+}
+
+.tow_card:hover {
+  transform: scale(1.075);
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+

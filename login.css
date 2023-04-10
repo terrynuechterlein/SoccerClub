@@ -1,0 +1,90 @@
+.background {
+    background-image: url('images/index6.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+    width: 45%;
+    height: 100%;
+    background-color: #f7f2f2;
+    border-radius: 15px;
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    /* padding makes input boxes thicker*/
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: 40%;
+    border-radius: 4px;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+    display: block;
+    color: black;
+    padding: 14px 20px;
+    margin: 12%;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    border-radius: 4px;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the avatar image inside this container */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Badge image */
+  img.badge {
+    width: 20%;
+    border-radius: 20%;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+    border-radius: 25px;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  } 
