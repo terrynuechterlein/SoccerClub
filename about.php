@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("connection.php");
+require_once 'connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ require_once("connection.php");
   <link rel="stylesheet" href="about.css">
 </head>
 <body>
- <?php include("navbar.php");?>
+ <?php include 'navbar.php'; ?>
      <!-- leadership board -->
      <div class="leadership">
       <h1>Leadership</h1>
@@ -51,6 +51,6 @@ require_once("connection.php");
     </div>
 
 
-    <?php include("footer.php");?>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

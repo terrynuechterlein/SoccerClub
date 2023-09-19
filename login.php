@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("connection.php");
+require_once 'connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ require_once("connection.php");
 </head>
 
 <body>
-<?php include("navigationBar.php");?>
+<?php include 'navigationBar.php'; ?>
 
   <div class="background">
   <form action="action_page.php" method="post">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("connection.php");
+require_once 'connection.php';
 ?>
 <!DOCTYPE html>
 
@@ -14,11 +14,16 @@ require_once("connection.php");
   <link rel="stylesheet" href="footer.css"> 
   <link rel="stylesheet" href="navbar.css"> 
  
+  <script type="text/javascript">
+		function goToCampusCup() {
+			window.location.href = "campuscup.php";
+		}
+	</script>
 
 </head>
 <body>
 
-<?php include("navbar.php");?>
+<?php include 'navbar.php'; ?>
 
 
   <!--main content-->
@@ -27,7 +32,7 @@ require_once("connection.php");
       <div class="main_content">
         <h1>Welcome to the Kalamazoo College Soccer Club</h1>
         <p>Campus Cup Registrations are Open!</p>
-        <button class="main_btn"><a href="#">Campus Cup</a></button>
+        <button class="main_btn"><a href="/SoccerClub/campuscup.php">Campus Cup</a></button>
       </div>
     </div>
   </div>
@@ -48,6 +53,6 @@ require_once("connection.php");
       </div>
    </div>
 
-  <div><?php include("footer.php");?></div>
+  <div><?php include 'footer.php'; ?></div>
 </body>      
 </html>

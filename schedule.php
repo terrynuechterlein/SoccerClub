@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("connection.php");
+require_once 'connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +16,14 @@ require_once("connection.php");
 
 <body>
 <div>
- <?php include("navigationBar.php");?>
+ <?php include 'navigationBar.php'; ?>
 </div>
 
  <div>
  </div>
 
  <div>
-      <?php include("footer.php");?>
+      <?php include 'footer.php'; ?>
 </div>
 </body>
 </html>
