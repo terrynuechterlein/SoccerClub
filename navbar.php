@@ -19,7 +19,7 @@
 <nav class="navbar">
   <div class="navbar_container">
     <div class="navbar_logo"
-       <a href="/SoccerClub/index.php" id="logo"><img src="images/KCSC_Badge.png" alt="Logo" onclick="goToIndex()"></a>
+       <a href="/SoccerClub/index.php" id="logo"><img src="/SoccerClub/images/KCSC_Badge.png" alt="Logo" onclick="goToIndex()"></a>
     </div>
      
     
@@ -38,7 +38,7 @@
         <a href="/SoccerClub/schedule.php" class="navbar_links">Schedule</a> 
       </li>
       <li class="navbar_item">
-        <a href="/SoccerClub/gallery.php" class="navbar_links">Gallery</a> 
+        <a href="/SoccerClub/Gallery/Gallery.php" class="navbar_links">Gallery</a> 
       </li>
 
     </ul>
