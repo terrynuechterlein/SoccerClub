@@ -6,8 +6,11 @@
 }
 .main {
   background-image: url('images/index8.png');
+  width: 100%;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: cover;
   overflow-x: hidden;
 }
 
@@ -22,7 +25,7 @@
   max-width: 1300px;
   padding-right: 50px;
   padding-left: 50px;
-  margin-left: 800px;
+  margin-left: 1000px;
 }
 
 .main_content {
