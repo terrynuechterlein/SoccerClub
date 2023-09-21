@@ -14,6 +14,15 @@ require_once 'connection.php';
   <link rel="stylesheet" href="footer.css"> 
   <link rel="stylesheet" href="navbar.css"> 
   <link rel="stylesheet" href="contact.css">
+  <script src="contact.js"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init("PZ7PDL2RIRgxrlr7b");
+   })();
+  </script>
 </head>
 <body>
   <!-- Header -->
@@ -28,14 +37,14 @@ require_once 'connection.php';
         </div>
         <div class="row">
           <div class="column">
-            <form action="/action_page.php">
-              <label for="fname">Name</label>
-              <input type="text" id="name" name="firstname" placeholder="Name">
+            <form>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Name">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" placeholder="Email">
-              <label for="subject">Message</label>
+              <label for="message">Message</label>
               <textarea id="message" name="message" placeholder="Your message goes here" style="height:170px"></textarea>
-              <input type="submit" value="Submit">
+              <input type="submit" value="Submit" onclick="sendMail()">
             </form>
           </div>
         </div>
