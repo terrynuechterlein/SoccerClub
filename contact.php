@@ -37,7 +37,7 @@ require_once 'connection.php';
         </div>
         <div class="row">
           <div class="column">
-            <form>
+            <form class="form">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Name">
               <label for="email">Email</label>
@@ -50,6 +50,23 @@ require_once 'connection.php';
         </div>
       </div>
     </div>
+
+    <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+
   </div>
 
   <!-- Footer -->
