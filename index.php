@@ -19,7 +19,7 @@ require_once 'connection.php';
 
   <script type="text/javascript">
 		function goToCampusCup() {
-			window.location.href = "campuscup.php";
+			window.location.href = "./CampusCup/campuscup.php";
 		}
 	</script>
 
@@ -39,7 +39,7 @@ require_once 'connection.php';
         <p>
           Click the button below to explore the success of our recent Campus Cup event on our blog!
         </p>
-        <button class="main_btn"><a href="/SoccerClub/campuscup.php">Campus Cup</a></button>
+        <button class="main_btn"><a href="./CampusCup/campuscup.php">Campus Cup</a></button>
       </div>
     </div>
   </div>
