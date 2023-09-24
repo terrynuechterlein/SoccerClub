@@ -1,6 +1,12 @@
 <?php
 session_start();
-require_once 'connection.php';
+
+  $_SESSION['restricted_access'] = true;
+
+  include("connection.php");
+  include("functions.php");
+
+  $user_data = check_login($con);
 ?>
 <!DOCTYPE html>
 

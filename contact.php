@@ -1,6 +1,13 @@
 <?php
 session_start();
-require_once 'connection.php';
+
+// Flag to indicate the page is restricted.
+$_SESSION['restricted_access'] = true;
+
+include("connection.php");
+include("functions.php");
+
+check_login($con);
 ?>
 
 <!DOCTYPE html>

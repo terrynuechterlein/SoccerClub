@@ -3,37 +3,51 @@ session_start();
 
   include("connection.php");
   include("functions.php");
+  $mail = require __DIR__ . "/mailer.php";
 
   if($_SERVER['REQUEST_METHOD'] == "POST")
   {
     //something was posted
-    $password = $_POST['password'];
     $email = $_POST['email'];
 
-    if(!empty($password) && !empty($email) )
-    {
-      //read from database
-      $query = "select * from users where email = '$email' limit 1";
+    $token = bin2hex(random_bytes(16));
 
-      $result = mysqli_query($con, $query);
+    $token_hash = hash("sha256", $token);
 
-      if($result){
-        if($result && mysqli_num_rows($result) > 0){
-          $user_data = mysqli_fetch_assoc($result);
+    $expiry = date("Y-m-d H:i:s", time() + 60 * 30);
+    
+    $query =" 
+    UPDATE users
+    SET reset_token_hash = ?,
+    reset_token_expires_at = ?
+    WHERE email = ?";
 
-          if (password_verify($password, $user_data['password'])) {
-            $_SESSION['user_id'] = $user_data['user_id'];
-            header("Location: index.php");
-            die;
-          }          
-        }
+    $stmt = $con->prepare($query);
+    $stmt -> bind_param("sss", $token_hash, $expiry, $email);
+    $stmt -> execute();
+
+    if($con->affected_rows) {
+      $mail = require __DIR__ . "/mailer.php";
+
+      $mail->setFrom("terrynuechterlein@gmail.com");
+      $mail->addAddress($email);
+      $mail->Subject = "Password Reset";
+      $mail->Body = <<<END
+
+      Click <a href="http://localhost/SoccerClub/reset-password.php?token=$token">here</a> to reset your password.
+
+      END;
+
+      try{
+        $mail->send();
       }
-      echo "wrong username or password";
-    }else
-    {
-      echo "wrong username or password";
+      catch (Exception $e){
+        echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+      }
     }
+    echo "Message sent. Please check your inbox.";
   }
+
 ?>
 
 <!DOCTYPE html>
@@ -42,8 +56,8 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>K Soccer Club - Sign In</title>
-  <link rel="stylesheet" href="./login.css">
+  <title>K Soccer Club - Forgot Password</title>
+  <link rel="stylesheet" href="./forgot-password.css">
   <link rel="stylesheet" href="./navbar.css">
   <script src="https://kit.fontawesome.com/15cec70deb.js" crossorigin="anonymous"></script>
 </head>
@@ -53,22 +67,16 @@ session_start();
 
   <div class="container">
     <div class="form-box">
-      <h1 id="title">Sign In</h1>
-      <form action="login.php" method="post">
+      <h1 id="title">Forgot Password</h1>
+      <form action="forgot-password.php" method="post">
         <div class="input-group">
           <div class="input-field">
             <i class="fa-solid fa-envelope"></i>
             <input type="email" placeholder="Email" name="email">
           </div>
-          <div class="input-field">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" placeholder="Password" name="password">
-          </div>
-          <p>Lost password <a href='forgot-password.php'>Click Here!</a></p>
-        </div>
+         </div>
         <div class="btn-field">
-          <button type="button" id="signupBtn"> Sign Up </button>
-          <button type="submit" id="signinBtn"> Sign In </button>
+          <button type="submit" id="signupBtn"> send </button>
         </div>
       </form>
     </div>
