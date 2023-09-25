@@ -4,6 +4,8 @@ session_start();
   include("connection.php");
   include("functions.php");
 
+  $error = ''; // Initialize an error variable
+
   if($_SERVER['REQUEST_METHOD'] == "POST")
   {
     //something was posted
@@ -28,10 +30,10 @@ session_start();
           }          
         }
       }
-      echo "wrong username or password";
-    }else
-    {
-      echo "wrong username or password";
+      $error = "wrong email or password";
+    }
+    else {
+     $error = "Please enter some valid information";
     }
   }
 ?>
@@ -67,9 +69,15 @@ session_start();
           <p>Lost password <a href='forgot-password.php'>Click Here!</a></p>
         </div>
         <div class="btn-field">
-          <button type="button" id="signupBtn"> Sign Up </button>
-          <button type="submit" id="signinBtn"> Sign In </button>
+          <button type="button" id="signupBtn" class="greyBtn"> Sign Up </button>
+          <button type="submit" id="signinBtn" class="purpleBtn"> Sign In </button>
         </div>
+       <!-- log error message -->
+        <?php
+        if(!empty($error)){
+          echo '<div style= "color:red; margin-top: 20px">' . $error . '</div';
+        }
+        ?>
       </form>
     </div>
   </div>
@@ -81,13 +89,6 @@ session_start();
     signupBtn.onclick = function() {
       window.location.href = 'signup.php';  // Redirects to signup.php
     }
-
-  window.onload = function() {
-    document.getElementById("signinBtn").style.background = "#3c00a0";
-    document.getElementById("signupBtn").style.background = "#eaeaea";
-    document.getElementById("signinBtn").style.color = "#fff";
-    document.getElementById("signupBtn").style.color = "#555";
-}
 
   </script>
 </body>

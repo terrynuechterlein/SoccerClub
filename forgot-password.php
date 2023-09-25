@@ -3,6 +3,8 @@ session_start();
 
   include("connection.php");
   include("functions.php");
+
+  $message = '';
   $mail = require __DIR__ . "/mailer.php";
 
   if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -29,7 +31,7 @@ session_start();
     if($con->affected_rows) {
       $mail = require __DIR__ . "/mailer.php";
 
-      $mail->setFrom("terrynuechterlein@gmail.com");
+      $mail->setFrom($_ENV['MAIL_USERNAME']);
       $mail->addAddress($email);
       $mail->Subject = "Password Reset";
       $mail->Body = <<<END
@@ -40,12 +42,14 @@ session_start();
 
       try{
         $mail->send();
+        $message = "Message sent. Please check your inbox.";
+        header("refresh:5;url=signup.php");  // Redirects to signup.php
       }
       catch (Exception $e){
-        echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+        $message = "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
       }
     }
-    echo "Message sent. Please check your inbox.";
+
   }
 
 ?>
@@ -75,27 +79,26 @@ session_start();
             <input type="email" placeholder="Email" name="email">
           </div>
          </div>
-        <div class="btn-field">
-          <button type="submit" id="signupBtn"> send </button>
+         <?php
+         if(!empty($message)){
+          echo '<div style= "color: green; margin-bottom: 50px;">' . $message . '</div>';
+         }
+         ?>
+        <div class="btn-field">    
+         <button type="button" class="greyBtn" id="gobackBtn" onclick="goBack()">Go Back</button>
+         <button type="submit" class="purpleBtn" id="submitBtn"> Submit </button>
         </div>
       </form>
     </div>
   </div>
 
   <script>
-    let signinBtn = document.getElementById("signinBtn");
-    let signupBtn = document.getElementById("signupBtn");
+    let gobackBtn = document.getElementById("gobackBtn");
+    let submitBtn = document.getElementById("submitBtn");
 
-    signupBtn.onclick = function() {
-      window.location.href = 'signup.php';  // Redirects to signup.php
+    function goBack() {
+      window.location.href = 'signup.php';
     }
-
-  window.onload = function() {
-    document.getElementById("signinBtn").style.background = "#3c00a0";
-    document.getElementById("signupBtn").style.background = "#eaeaea";
-    document.getElementById("signinBtn").style.color = "#fff";
-    document.getElementById("signupBtn").style.color = "#555";
-}
 
   </script>
 </body>

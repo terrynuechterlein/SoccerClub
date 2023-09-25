@@ -28,8 +28,6 @@ if($user === null){
 if (strtotime($user['reset_token_expires_at']) <= time()){
   die("token has expired");
 }
-
-echo "token is valid and hasn't expired";
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +37,7 @@ echo "token is valid and hasn't expired";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>K Soccer Club - Forgot Password</title>
-  <link rel="stylesheet" href="./signup.css">
+  <link rel="stylesheet" href="./reset-password.css">
   <link rel="stylesheet" href="./navbar.css">
   <script src="https://kit.fontawesome.com/15cec70deb.js" crossorigin="anonymous"></script>
 </head>
@@ -64,8 +62,15 @@ echo "token is valid and hasn't expired";
           </div>
          </div>
         <div class="btn-field">
-          <button type="submit" id="submitBtn"> submit </button>
+          <button type="button" class="greyBtn" id="signinBtn" onclick="goBack()">Go Back</button>
+          <button type="submit" id="submitBtn" class="purpleBtn"> submit </button>
         </div>
+        <?php
+        if(isset($_SESSION['error_message'])) {
+          echo '<div style="color:red; margin-top: 20px;">' . $_SESSION['error_message'] . '</div>';
+          unset($_SESSION['error_message']);
+        }
+      ?>
       </form>
     </div>
   </div>
@@ -74,14 +79,14 @@ echo "token is valid and hasn't expired";
     let signinBtn = document.getElementById("signinBtn");
     let signupBtn = document.getElementById("signupBtn");
 
-    signupBtn.onclick = function() {
+    signinBtn.onclick = function() {
       window.location.href = 'signup.php';  // Redirects to signup.php
     }
 
-  window.onload = function() {
-    document.getElementById("submitBtn").style.background = "#eaeaea";
-    document.getElementById("submitBtn").style.color = "#555";
-}
+    function goBack() {
+      window.location.href = 'signup.php';
+    }
+
   </script>
 </body>
 </html>

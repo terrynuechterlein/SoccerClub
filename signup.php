@@ -4,6 +4,8 @@ session_start();
   include("connection.php");
   include("functions.php");
 
+  $error = ''; // Initialize an error variable
+
   if($_SERVER['REQUEST_METHOD'] == "POST")
   {
     //something was posted
@@ -13,37 +15,47 @@ session_start();
 
     if(!empty($name) && !empty($password) && !empty($email) && !is_numeric($name || $email))
     {
-      // Check if email exists
-      $email_check_query = "SELECT * FROM users WHERE email = ? LIMIT 1";
-      $stmt = $con->prepare($email_check_query);
-      $stmt->bind_param("s", $email);
-      $stmt->execute();
-      $stmt->store_result();
-      if ($stmt->num_rows > 0) {
-          $_SESSION['message'] = "Email already exists";
-          header("Location: signup.php");
-          die;
-      }
-      $stmt->close();
+    // Check if email exists
+    $email_check_query = "SELECT * FROM users WHERE email = ? LIMIT 1";
+    $stmt = $con->prepare($email_check_query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
+    if ($stmt->num_rows > 0) 
+    {
+      $error = "Email already exists";
+    }
+    $stmt->close();
 
+    if ($_POST["password"] !== $_POST["password_confirmation"]) {
+      $error = "Passwords don't match";
+    }else if (strlen($_POST["password"]) < 8){
+      $error = "Password must contain at least 8 characters";
+    } 
+    else if( ! preg_match("/[a-z]/", $_POST["password"])){
+      $error = "Password must contain at least one letter";
+    } 
+    else if( ! preg_match("/[0-9]/", $_POST["password"])){
+      $error = "Password must contain at least one number";
+    } 
+    if (empty($error)) {
       //if no other email exists, save to database
       $user_id = random_num(20);
-
       $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
       $stmt = $con->prepare("INSERT INTO users (user_id, name, email, password) VALUES (?, ?, ?, ?)");
-      $stmt->bind_param("ssss", $user_id, $name, $email, $hashedPassword);
-  
+      $stmt->bind_param("ssss", $user_id, $name, $email, $hashedPassword);        
       $stmt->execute();
       $stmt->close();
-  
+      
       header("Location: login.php");
       die;
 
-    }else
-    {
-      echo "Please enter some valid information";
-    }
+     }
   }
+  else {
+    $error = "Please enter some valid information";
+  }
+}
   unset($_SESSION['restricted_access']);
 ?>
 
@@ -88,12 +100,22 @@ session_start();
             <i class="fa-solid fa-lock"></i>
             <input type="password" placeholder="Password" name="password">
           </div>
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Retype Password" name="password_confirmation">
+          </div>
           <p>Lost password <a href='forgot-password.php'>Click Here!</a></p>
         </div>
         <div class="btn-field">
-          <button type="submit" id="signupBtn"> Sign Up </button>
-          <button type="button" class="disable" id="signinBtn" > Sign in</button>
+          <button type="submit" id="signupBtn" class="purpleBtn"> Sign Up </button>
+          <button type="button" id="signinBtn" class="greyBtn"> Sign in</button>
         </div>
+         <!-- Echo error message  -->
+           <?php
+          if(!empty($error)) {
+            echo '<div style="color:red; margin-top: 20px;">' . $error . '</div>';
+          }
+          ?>
       </form>
     </div>
   </div>
@@ -111,16 +133,7 @@ session_start();
     signupBtn.onclick = function(){
       nameField.style.maxHeight = "60px";
       title.innerHTML = "Sign Up";
-      signupBtn.classList.remove("disable");
-      signinBtn.classList.add("disable");
     }
-
-  window.onload = function() {
-    document.getElementById("signupBtn").style.background = "#3c00a0";
-    document.getElementById("signinBtn").style.background = "#eaeaea";
-    document.getElementById("signupBtn").style.color = "#fff";
-    document.getElementById("signinBtn").style.color = "#555";
-  }
 
   setTimeout(function() {
     let msgElement = document.getElementById('loginAlert');
