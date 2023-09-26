@@ -18,7 +18,7 @@
 <!-- creates a navigation bar -->
 <nav class="navbar">
   <div class="navbar_container">
-    <div class="navbar_logo"
+    <div class="navbar_logo">
        <a href="/SoccerClub/index.php" id="logo"><img src="/SoccerClub/images/KCSC_Badge.png" alt="Logo" onclick="goToIndex()"></a>
     </div>
      

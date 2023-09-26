@@ -20,7 +20,7 @@
             </div>
             <div class="footer_link--items">
               <h2>Contact Us</h2>
-              <a href="/">Contact</a> <a href="/">Support</a>
+              <a href="contact.php">Contact</a>
             </div>
           </div>
 
