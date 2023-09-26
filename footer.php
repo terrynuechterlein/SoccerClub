@@ -15,8 +15,7 @@
           <div class="footer_link--wrapper">
             <div class="footer_link--items">
               <h2>About Us</h2>
-              <a href="/sign_up">How it works</a> <a href="/">Constitution</a>
-              <a href="/">History</a> 
+              <a href="howitworks.php">How it works</a> <a href="/">Constitution</a> 
             </div>
             <div class="footer_link--items">
               <h2>Contact Us</h2>

@@ -8,7 +8,6 @@ body {
     font-family: 'Exo', sans-serif;
   }
 
-
   * {
     box-sizing: border-box;
     margin: 0px;
@@ -23,7 +22,7 @@ body {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-    background-color: rgba(255, 255, 255, 0.5)
+    background-color: rgba(255, 255, 255, 0.4)
   }
 
   input[type=email], select, textarea {
@@ -33,7 +32,7 @@ body {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-    background-color: rgba(255, 255, 255, 0.5)
+    background-color: rgba(255, 255, 255, 0.4)
   }
   
   input[type=submit] {
@@ -49,7 +48,7 @@ body {
   }
   
   input[type=submit]:hover {
-    background: #4837ff
+    background: #4e54c8;
   }
   
   /* Style the container/contact section */
@@ -74,7 +73,7 @@ body {
     box-sizing: border-box;
     margin-bottom: 0;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   .card h2 {
