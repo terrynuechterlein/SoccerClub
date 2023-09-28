@@ -72,6 +72,11 @@
       <li class="navbar_item">
         <a href="/SoccerClub/Contact/contact.php" class="navbar_links">Contact</a> 
       </li>
+      <li class="navbar_item">
+        <a href="/SoccerClub/ProfilePage/ProfilePage.php" class="navbar_links">
+          <img src="/SoccerClub/images/profileicon.png" alt="profileIcon" class="profileicon">
+        </a> 
+      </li>
 
     </ul>
   </div>

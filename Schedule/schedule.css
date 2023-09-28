@@ -13,8 +13,7 @@
     padding: 20px;
     box-sizing: border-box;
     position: relative;
-    z-index: 1; /* Ensure the content is on top of the background */
-    /* flex: 1;  */
+    z-index: 1; 
     min-height: 100vh;
     height: auto;
     

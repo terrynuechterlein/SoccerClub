@@ -27,6 +27,10 @@
   margin: 0 auto;
   padding: 0;
 }
+.navbar_links img.profileicon {
+  width: 2rem;  
+  height: 2rem; 
+}
 
 .navbar_logo {
   display: flex;

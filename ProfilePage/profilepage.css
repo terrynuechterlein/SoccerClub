@@ -1,0 +1,24 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 80px);  /* Assuming 80px is the height of your navbar */
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 20px;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #e36e00; /* Same as your navbar_links color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ff884d; /* Slightly lighter orange for hover effect */
+}

@@ -25,7 +25,7 @@ function check_login($con)
       if (isset($_SESSION['restricted_access']) && $_SESSION['restricted_access']) {
         $_SESSION['message'] = "Please log in";
       }
-      header("Location: ./SignUp/signup.php");
+      header("Location: /SoccerClub/SignUp/signup.php");
       die;
   }
 }

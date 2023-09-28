@@ -66,7 +66,7 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>K Soccer Club</title>
+  <title>KCSC signup</title>
   <link rel="stylesheet" href="./signup.css">
   <link rel="stylesheet" href="/SoccerClub/Navbar/navbar.css">
   <script src="https://kit.fontawesome.com/15cec70deb.js" crossorigin="anonymous"></script>

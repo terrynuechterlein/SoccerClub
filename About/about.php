@@ -23,8 +23,9 @@ check_login($con);
   <link rel="stylesheet" href="/SoccerClub/Footer/footer.css"> 
   <link rel="stylesheet" href="./about.css">
 </head>
+<?php include '../Navbar/navbar.php'; ?>
+
 <body>
- <?php include '../Navbar/navbar.php'; ?>
      <!-- leadership board -->
      <div class="leadership">
       <h1>Leadership</h1>
@@ -58,7 +59,6 @@ check_login($con);
       </div>
     </div>
 
-
-    <?php include '../Footer/footer.php'; ?>
 </body>
+<?php include '../Footer/footer.php'; ?>
 </html>

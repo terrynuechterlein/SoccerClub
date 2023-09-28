@@ -18,22 +18,16 @@ check_login($con);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KCSC 2023</title>
+  <title>KCSC Campus Cup</title>
   <!-- <link rel="stylesheet" href="../index.css">   -->
   <link rel="stylesheet" href="/SoccerClub/Footer/footer.css">
   <link rel="stylesheet" href="/SoccerClub/Navbar/navbar.css">
   <link rel="stylesheet" href="./campuscup.css">
-
-
-
-
 </head>
 
-<body>
-  <div>
-    <?php include '../Navbar/navbar.php'; ?>
-  </div>
+<?php include '../Navbar/navbar.php'; ?>
 
+<body>
   <div class="container blog">
     <div class="blog__content">
       <div class="content__heading">
@@ -75,7 +69,7 @@ check_login($con);
         <h2> Setting the Stage </h2>
         <p> As I walked through the bricked streets flowing through Kalamazoo College’s campus, I found myself enveloped
           by a gnawing realization. As the horizon of my college experience began to narrow down, a question kept
-          popping up in my thoughts: what legacy would I leave behind?<br /><br />Thus, the Campus Cup was conceived - a
+          popping up in my thoughts: what kind of footprint would I leave behind from my time in college?<br /><br />Thus, the Campus Cup was conceived - a
           soccer event not just limited to our campus but one with the potential to bring communities together,
           transcending school boundaries and creating an arena where faculty and students could convene for the love of
           the beautiful game.

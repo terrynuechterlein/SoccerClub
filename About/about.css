@@ -7,8 +7,8 @@
 
 html,
 body {
-  height: 100%;
   background-color: #141414;
+  height: auto;
 }
 
 /* leadership */
@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
   margin-top: 10rem;
   margin-bottom: 15rem;
 }
