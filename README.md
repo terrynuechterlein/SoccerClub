@@ -27,6 +27,7 @@ This website was envisioned and brought to life as an auxiliary project to suppo
 
 ### Setup
 Prerequisites: Ensure you have XAMPP (or WAMPP's equivalent) installed on your system. This will provide you with both the Apache server and the MySQL server essential for the web app.
+You will need to clone the project in the htdocs directory of the xampp folder.
 
 Database Setup: Create a database named login_db in your MySQL setup. Once created, import the provided SQL file to set up the necessary tables and configurations.
 
