@@ -21,9 +21,9 @@ This website was envisioned and brought to life as an auxiliary project to suppo
 
 ## Technical Information
 ### Tech Stack
-▶Frontend: HTML, CSS, JavaScript </br>
-▶Backend: PHP  </br>
-▶Database: MySQL </br>
+▶Frontend: HTML, CSS, JavaScript </br></br>
+▶Backend: PHP  </br></br>
+▶Database: MySQL </br></br>
 
 ### Setup
 Prerequisites: Ensure you have XAMPP (or WAMPP's equivalent) installed on your system. This will provide you with both the Apache server and the MySQL server essential for the web app.
@@ -37,8 +37,8 @@ Connection Configuration: The app is pre-configured to connect to the database. 
 ## Troubleshooting
 If you encounter a "failed to connect" error, verify that:
 
-▶Your MySQL server is running.
-▶The database exists and the SQL file has been imported.
+▶Your MySQL server is running. </br></br>
+▶The database exists and the SQL file has been imported. </br></br>
 ▶The database connection credentials in connection.php match your setup.
 
 ## Support
