@@ -17,7 +17,7 @@ function check_login($con)
       {
         // User does not exist in database, remove session and redirect
         
-        header("Location: /SoccerClub/signup.php");
+        header("Location: /SoccerClub/SignUp/signup.php");
         die;
       }
     }
@@ -25,7 +25,7 @@ function check_login($con)
       if (isset($_SESSION['restricted_access']) && $_SESSION['restricted_access']) {
         $_SESSION['message'] = "Please log in";
       }
-      header("Location: /SoccerClub/signup.php");
+      header("Location: ./SignUp/signup.php");
       die;
   }
 }

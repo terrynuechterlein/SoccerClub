@@ -19,14 +19,15 @@ check_login($con);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>K College Soccer Club</title>
-  <link rel="stylesheet" href="../navbar.css">
-  <link rel="stylesheet" href="../footer.css"> 
+  <link rel="stylesheet" href="../Navbar/navbar.css">
   <link rel="stylesheet" href="./gallery.css">
+  <link rel="stylesheet" href="/SoccerClub/Footer/footer.css"> 
+
 </head>
 
 <body>
 <div>
- <?php include '../navbar.php'; ?>
+ <?php include '../Navbar/navbar.php'; ?>
 </div>
 
 <div class="container">
@@ -69,9 +70,7 @@ check_login($con);
 
 </script>
 
-<div>
-  <?php include '../footer.php'; ?>
-</div>
-
 </body>
+<?php include '../Footer/footer.php'; ?>
+
 </html>

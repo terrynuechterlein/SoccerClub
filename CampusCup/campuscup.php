@@ -4,8 +4,8 @@ session_start();
 // Flag to indicate the page is restricted.
 $_SESSION['restricted_access'] = true;
 
-include("connection.php");
-include("functions.php");
+include("../connection.php");
+include("../functions.php");
 
 check_login($con);
 ?>
@@ -20,8 +20,8 @@ check_login($con);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KCSC 2023</title>
   <!-- <link rel="stylesheet" href="../index.css">   -->
-  <link rel="stylesheet" href="../footer.css">
-  <link rel="stylesheet" href="../navbar.css">
+  <link rel="stylesheet" href="/SoccerClub/Footer/footer.css">
+  <link rel="stylesheet" href="/SoccerClub/Navbar/navbar.css">
   <link rel="stylesheet" href="./campuscup.css">
 
 
@@ -31,7 +31,7 @@ check_login($con);
 
 <body>
   <div>
-    <?php include '../navbar.php'; ?>
+    <?php include '../Navbar/navbar.php'; ?>
   </div>
 
   <div class="container blog">
@@ -90,7 +90,7 @@ check_login($con);
           would set up the nets and we would run fun pickup matches with whoever wanted to come.<br /><br />But like a
           snowball cascading down a hillside, our membership began to grow. Our dedication bore fruits, and by my senior
           year, our club swelled to 30-35 attendees coming to meetings consistently. There was a palpable electricity in
-          the air; our small project had metamorphosed into something grande.
+          the air; our small project had metamorphosed into something big on our small campus.
         </p>
       </div>
 
@@ -111,7 +111,7 @@ check_login($con);
           <p> As my final year commenced, the whispered dream of the Campus Cup began to crescendo. The idea felt right,
             timely even, but a certain urgency also loomed - it was now or never. My friend and vice-president, Fatima
             Ortega, was pivotal in rekindling this dream. If there was a personification of determination, it was her.
-            We bounced ideas back and forth, stretched out plans, and visualized my idea<br /><br />Soon after, our
+            We bounced ideas back and forth, stretched out plans, and visualized the idea.<br /><br />Soon after, our
             discussionas led to greater strides. Fatima’s initiative led to consultations with members from the varsity
             soccer teams to refine the guidelines of the project. The idea was blossoming into an intricate tapestry, no
             longer confined to to our leadership group, but open to the broader academic community.
@@ -126,7 +126,7 @@ check_login($con);
             I utilizes NightCafte, an AI image generator to produce two digital artworks- one featuring triumphant
             soccer players holding aloft a trophy against a radiant sun, and another illustrating a tense one-on-one
             showdown between competitors. These visuals served as the foundational elements for the poster, around which
-            the other design component were arranged. The event, for me, resembled the production of a cinematic
+            the other design components were arranged. The event, for me, resembled the production of a cinematic
             experience- an endeavor under production by passionate
           </p>
         </div>
@@ -160,7 +160,7 @@ check_login($con);
 
           <div class="text-container">
             <h2> The Grand Spectacle </h2>
-            <p> The sun bore down ferociously on the day of teh event, but it paled in comparison to the heat of the
+            <p> The sun bore down ferociously on the day of the event, but it paled in comparison to the heat of the
               competition. Canopies fluttered in the scorching breeze, offering solace to the perspiring teams. The
               grounds pulsated with an electric energy, a buzzing undercurrent of excitement, competition, and
               unity.<br /><br />From the outset, the atmosphere was nothing short of a cinematic spectacle. Players from
@@ -181,7 +181,7 @@ check_login($con);
 
           <div class="text-container">
             <h2> Epilogue </h2>
-            <p> The Broncos clinched a dramatic 5-3 victory against Tekkerz FC, getting crowned the first champions of
+            <p> The Broncos clinched a dramatic 5-3 victory against Tekkerz FC in the final, getting crowned the first champions of
               the Campus Cup (if you wish, you can view all the photos from the event in the gallery section of the web
               app). The real triumph however was immeasurable. The Campus Cup had morphed from a dream into an
               unforgettable reality, and as I stood there, trophy gleaming in the twilight, it hit me— this was our
@@ -192,7 +192,7 @@ check_login($con);
               testament to what can be achieved through determination, discipline, and perseverance.
               <br />
               <br />So here's to the Campus Cup— may it continue to serve as a beacon of unity, competition, and above
-              all, the enduring power of dreams
+              all, the enduring power of dreams.
             </p>
           </div>
 
@@ -203,7 +203,7 @@ check_login($con);
         </div>
       </div>
 
-      <?php include "../footer.php"; ?>
+      <?php include "../Footer/footer.php"; ?>
 
 </body>
 
